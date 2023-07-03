@@ -15,7 +15,7 @@ let package = Package(
     ],
     targets: [
         .executableTarget(
-            name: "App",
+            name: "VTIDSubscriber",
             dependencies: [
                 .product(name: "Fluent", package: "fluent"),
                 .product(name: "FluentMySQLDriver", package: "fluent-mysql-driver"),
@@ -29,8 +29,8 @@ let package = Package(
                 .unsafeFlags(["-cross-module-optimization"], .when(configuration: .release))
             ]
         ),
-        .testTarget(name: "AppTests", dependencies: [
-            .target(name: "App"),
+        .testTarget(name: "VTIDSubscriberTests", dependencies: [
+            .target(name: "VTIDSubscriber"),
             .product(name: "XCTVapor", package: "vapor"),
         ])
     ]
