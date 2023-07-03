@@ -17,7 +17,6 @@ func routes(_ app: Application) throws {
             "email",
             "profile",
             "https://www.googleapis.com/auth/spreadsheets.readonly",
-            "https://www.googleapis.com/auth/youtube",
         ],
         redirect: "/oauth-token"
     )

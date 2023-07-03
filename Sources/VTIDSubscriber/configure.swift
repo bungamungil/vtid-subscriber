@@ -26,6 +26,7 @@ public func configure(_ app: Application) async throws {
     
     app.commands.use(WebSubSubscriber.Subscribe(), as: "subscribe")
     app.commands.use(WebSubSubscriber.Unsubscribe(), as: "unsubscribe")
+    app.commands.use(AutoSubscribe(), as: "auto-subscribe")
     
     app.middleware.use(app.sessions.middleware)
 
