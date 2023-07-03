@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>LilyFeed</title>
+</head>
+
+<body>
+  <h1>Subscriptions</h1>
+  
+  <table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Topic</th>
+      <th>Hub</th>
+      <th>Callback</th>
+      <th>State</th>
+    </tr>
+  </thead>
+  <tbody>
+    #for(subscription in subscriptions):
+    <tr>
+      <td>#(subscription.id)</td>
+      <td>#(subscription.topic)</td>
+      <td>#(subscription.hub)</td>
+      <td>#(subscription.callback)</td>
+      <td>#(subscription.state)</td>
+    </tr>
+    #endfor
+  </tbody>
+  </table>
+</body>
+</html>

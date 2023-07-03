@@ -2,7 +2,9 @@ import NIOSSL
 import Fluent
 import FluentMySQLDriver
 import Leaf
+import LilyFeedKit
 import Vapor
+import WebSubSubscriber
 
 // configures your application
 public func configure(_ app: Application) async throws {
@@ -19,7 +21,11 @@ public func configure(_ app: Application) async throws {
 
     app.views.use(.leaf)
 
+    app.migrations.add(CreateSubscriptionsTable())
+    app.migrations.add(CreateYoutubeVideosTable())
     
+    app.commands.use(WebSubSubscriber.Subscribe(), as: "subscribe")
+    app.commands.use(WebSubSubscriber.Unsubscribe(), as: "unsubscribe")
 
     // register routes
     try routes(app)

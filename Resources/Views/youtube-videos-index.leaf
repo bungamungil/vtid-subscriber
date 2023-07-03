@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>LilyFeed</title>
+</head>
+
+<body>
+  <h1>Youtube Videos</h1>
+  
+  <table>
+  <thead>
+    <tr>
+      <th>Subscription</th>
+      <th>Channel Name</th>
+      <th>Channel URL</th>
+      <th>Video Title</th>
+      <th>Video URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    #for(youtubeVideo in youtubeVideos):
+    <tr>
+      <td>#(youtubeVideo.subscription.id)</td>
+      <td>#(youtubeVideo.channelName)</td>
+      <td>
+        <a href="#(youtubeVideo.channelURL)">
+          #(youtubeVideo.channelURL)
+        </a>
+      </td>
+      <td>#(youtubeVideo.videoTitle)</td>
+      <td>
+        <a href="#(youtubeVideo.videoURL)">
+          #(youtubeVideo.videoURL)
+        </a>
+      </td>
+    </tr>
+    #endfor
+  </tbody>
+  </table>
+</body>
+</html>
