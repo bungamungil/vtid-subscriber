@@ -26,6 +26,8 @@ public func configure(_ app: Application) async throws {
     
     app.commands.use(WebSubSubscriber.Subscribe(), as: "subscribe")
     app.commands.use(WebSubSubscriber.Unsubscribe(), as: "unsubscribe")
+    
+    app.middleware.use(app.sessions.middleware)
 
     // register routes
     try routes(app)
