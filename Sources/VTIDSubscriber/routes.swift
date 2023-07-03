@@ -18,7 +18,7 @@ func routes(_ app: Application) throws {
             "profile",
             "https://www.googleapis.com/auth/spreadsheets.readonly",
         ],
-        redirect: "\(Environment.get("WEBSUB_PATH") ?? "")/oauth-token"
+        redirect: "/oauth-token"
     )
     
     app.get("oauth-token") { req in
