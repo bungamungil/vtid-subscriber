@@ -12,7 +12,7 @@ func routes(_ app: Application) throws {
     try app.routes.oAuth(
         from: Google.self,
         authenticate: "google-oauth",
-        callback: "\(Environment.get("WEB_HOST") ?? "")/google-oauth-complete",
+        callback: "\(Environment.get("WEBSUB_HOST") ?? "")/google-oauth-complete",
         scope: [
             "email",
             "profile",
